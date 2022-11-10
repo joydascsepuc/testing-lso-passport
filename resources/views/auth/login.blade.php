@@ -1,5 +1,25 @@
 @extends('layouts.app')
 
+@section('extra-css')
+    <style type="text/css">
+        .ls-buttons {
+            color: #ffffff;
+            background-color: black;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .ls-gg-button {
+            background-color: #4285F6
+        }
+
+        .ls-fb-button {
+            background-color: #3B5998;
+        }
+    </style>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -65,6 +85,14 @@
                             </div>
                         </div>
                     </form>
+                    <div class="d-grid gap-2 mt-5">
+                        <a class="btn ls-buttons ls-gg-button" type="button">
+                            <i class="fab fa-google"></i>&nbsp;Continue with Google
+                        </a>
+                        <a class="btn ls-buttons ls-fb-button" href="{{ url('auth/facebook') }}" type="button">
+                            <i class="fab fa-facebook"></i>&nbsp;Continue with Facebook
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
