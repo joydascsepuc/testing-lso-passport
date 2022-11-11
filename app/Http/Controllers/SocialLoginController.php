@@ -22,7 +22,7 @@ class SocialLoginController extends Controller
 
             if($isUser){
                 Auth::login($isUser);
-                return redirect('/dashboard');
+                return redirect('/home');
             }else{
                 $createUser = User::create([
                     'name' => $user->name,
@@ -32,7 +32,7 @@ class SocialLoginController extends Controller
                 ]);
 
                 Auth::login($createUser);
-                return redirect('/dashboard');
+                return redirect('/home');
             }
 
         } catch (Exception $exception) {
